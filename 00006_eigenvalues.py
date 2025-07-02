@@ -6,8 +6,8 @@ def calculate_eigenvalues(matrix: torch.Tensor) -> torch.Tensor:
     Input: tensor; Output: 1-D tensor with the two eigenvalues in ascending order.
     """
     # Your implementation here
-    eig_vals, _ = torch.linalg.eig(matrix)
-    return sorted(torch.tensor(eig_vals, dtype=torch.float), reverse=True)
+    eig_vals = torch.linalg.eigvals(matrix).real
+    return torch.sort(eig_vals, descending=True).values
 
 
 if __name__ == "__main__":
