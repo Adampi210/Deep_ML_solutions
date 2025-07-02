@@ -7,7 +7,7 @@ def calculate_eigenvalues(matrix: torch.Tensor) -> torch.Tensor:
     """
     # Your implementation here
     eig_vals = torch.linalg.eigvals(matrix).real
-    return torch.sort(eig_vals, descending=True).values
+    return torch.sort(eig_vals).values
 
 
 if __name__ == "__main__":
